@@ -1,0 +1,85 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/sam/Code/Mind-link/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+ARCH	makefile	/^ARCH         = AVR8$/;"	m
+BOARD	makefile	/^BOARD        = USBKEY$/;"	m
+CALLBACK_USB_GetDescriptor	Descriptors.c	/^uint16_t CALLBACK_USB_GetDescriptor(const uint16_t wValue,$/;"	f	typeref:typename:uint16_t
+CC_FLAGS	makefile	/^CC_FLAGS     = -DUSE_LUFA_CONFIG_HEADER -IConfig\/$/;"	m
+CDC_CCI_Interface	Descriptors.h	/^	USB_Descriptor_Interface_t CDC_CCI_Interface;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_Descriptor_Interface_t
+CDC_DCI_Interface	Descriptors.h	/^	USB_Descriptor_Interface_t CDC_DCI_Interface;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_Descriptor_Interface_t
+CDC_DataInEndpoint	Descriptors.h	/^	USB_Descriptor_Endpoint_t CDC_DataInEndpoint;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_Descriptor_Endpoint_t
+CDC_DataOutEndpoint	Descriptors.h	/^	USB_Descriptor_Endpoint_t CDC_DataOutEndpoint;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_Descriptor_Endpoint_t
+CDC_Functional_ACM	Descriptors.h	/^	USB_CDC_Descriptor_FunctionalACM_t CDC_Functional_ACM;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_CDC_Descriptor_FunctionalACM_t
+CDC_Functional_Header	Descriptors.h	/^	USB_CDC_Descriptor_FunctionalHeader_t CDC_Functional_Header;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_CDC_Descriptor_FunctionalHeader_t
+CDC_Functional_Union	Descriptors.h	/^	USB_CDC_Descriptor_FunctionalUnion_t CDC_Functional_Union;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_CDC_Descriptor_FunctionalUnion_t
+CDC_NOTIFICATION_EPADDR	Descriptors.h	/^#define CDC_NOTIFICATION_EPADDR /;"	d
+CDC_NOTIFICATION_EPSIZE	Descriptors.h	/^#define CDC_NOTIFICATION_EPSIZE /;"	d
+CDC_NotificationEndpoint	Descriptors.h	/^	USB_Descriptor_Endpoint_t CDC_NotificationEndpoint;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_Descriptor_Endpoint_t
+CDC_RX_EPADDR	Descriptors.h	/^#define CDC_RX_EPADDR /;"	d
+CDC_TXRX_EPSIZE	Descriptors.h	/^#define CDC_TXRX_EPSIZE /;"	d
+CDC_TX_EPADDR	Descriptors.h	/^#define CDC_TX_EPADDR /;"	d
+CLK_PIN	Mind-link.c	/^#define CLK_PIN /;"	d	file:
+CMD_LEN	Mind-link.c	/^#define CMD_LEN /;"	d	file:
+Config	Descriptors.h	/^	USB_Descriptor_Configuration_Header_t Config;$/;"	m	struct:__anond58df16d0108	typeref:typename:USB_Descriptor_Configuration_Header_t
+ConfigurationDescriptor	Descriptors.c	/^const USB_Descriptor_Configuration_t PROGMEM ConfigurationDescriptor =$/;"	v	typeref:typename:const USB_Descriptor_Configuration_t PROGMEM
+DMBS_LUFA_PATH	makefile	/^DMBS_LUFA_PATH ?= $(LUFA_PATH)\/Build\/LUFA$/;"	m
+DMBS_PATH	makefile	/^DMBS_PATH      ?= $(LUFA_PATH)\/Build\/DMBS\/DMBS$/;"	m
+DeviceDescriptor	Descriptors.c	/^const USB_Descriptor_Device_t PROGMEM DeviceDescriptor =$/;"	v	typeref:typename:const USB_Descriptor_Device_t PROGMEM
+EVENT_CDC_Device_ControLineStateChanged	Mind-link.c	/^void EVENT_CDC_Device_ControLineStateChanged(USB_ClassInfo_CDC_Device_t *const CDCInterfaceInfo)$/;"	f	typeref:typename:void
+EVENT_USB_Device_ConfigurationChanged	Mind-link.c	/^void EVENT_USB_Device_ConfigurationChanged(void)$/;"	f	typeref:typename:void
+EVENT_USB_Device_Connect	Mind-link.c	/^void EVENT_USB_Device_Connect(void)$/;"	f	typeref:typename:void
+EVENT_USB_Device_ControlRequest	Mind-link.c	/^void EVENT_USB_Device_ControlRequest(void)$/;"	f	typeref:typename:void
+EVENT_USB_Device_Disconnect	Mind-link.c	/^void EVENT_USB_Device_Disconnect(void)$/;"	f	typeref:typename:void
+FIXED_CONTROL_ENDPOINT_SIZE	Config/LUFAConfig.h	/^	#define FIXED_CONTROL_ENDPOINT_SIZE /;"	d
+FIXED_NUM_CONFIGURATIONS	Config/LUFAConfig.h	/^	#define FIXED_NUM_CONFIGURATIONS /;"	d
+F_CPU	makefile	/^F_CPU        = 16000000$/;"	m
+F_USB	makefile	/^F_USB        = $(F_CPU)$/;"	m
+HandleMuxAndIO	Mind-link.c	/^void HandleMuxAndIO(void)$/;"	f	typeref:typename:void
+INPUT_PIN	Mind-link.c	/^#define INPUT_PIN /;"	d	file:
+INTERFACE_ID_CDC_CCI	Descriptors.h	/^	INTERFACE_ID_CDC_CCI = 0, \/**< CDC CCI interface descriptor ID *\/$/;"	e	enum:InterfaceDescriptors_t
+INTERFACE_ID_CDC_DCI	Descriptors.h	/^	INTERFACE_ID_CDC_DCI = 1, \/**< CDC DCI interface descriptor ID *\/$/;"	e	enum:InterfaceDescriptors_t
+INTERRUPT_CONTROL_ENDPOINT	Config/LUFAConfig.h	/^	#define INTERRUPT_CONTROL_ENDPOINT$/;"	d
+InterfaceDescriptors_t	Descriptors.h	/^enum InterfaceDescriptors_t {$/;"	g
+LD_FLAGS	makefile	/^LD_FLAGS     =$/;"	m
+LUFA_PATH	makefile	/^LUFA_PATH    = ..\/lufa\/LUFA$/;"	m
+MAX_ENDPOINT_INDEX	Config/LUFAConfig.h	/^	#define MAX_ENDPOINT_INDEX /;"	d
+MCU	makefile	/^MCU          = atmega32u2$/;"	m
+ManufacturerString	Descriptors.c	/^const USB_Descriptor_String_t PROGMEM ManufacturerString = USB_STRING_DESCRIPTOR(L"sam-astro");$/;"	v	typeref:typename:const USB_Descriptor_String_t PROGMEM
+OPTIMIZATION	makefile	/^OPTIMIZATION = s$/;"	m
+ProductString	Descriptors.c	/^const USB_Descriptor_String_t PROGMEM ProductString = USB_STRING_DESCRIPTOR(L"Mindlink processor/;"	v	typeref:typename:const USB_Descriptor_String_t PROGMEM
+RST_COUNTER_PIN	Mind-link.c	/^#define RST_COUNTER_PIN /;"	d	file:
+ReportString	Mind-link.c	/^char* ReportString = "00000000000000000000000000000000\\n\\0";$/;"	v	typeref:typename:char *
+SRC	makefile	/^SRC          = $(TARGET).c Descriptors.c $(LUFA_SRC_USB) $(LUFA_SRC_USBCLASS)$/;"	m
+STRING_ID_Language	Descriptors.h	/^	STRING_ID_Language = 0,		\/**< Supported Languages string descriptor ID (must be zero) *\/$/;"	e	enum:StringDescriptors_t
+STRING_ID_Manufacturer	Descriptors.h	/^	STRING_ID_Manufacturer = 1, \/**< Manufacturer string ID *\/$/;"	e	enum:StringDescriptors_t
+STRING_ID_Product	Descriptors.h	/^	STRING_ID_Product = 2,		\/**< Product string ID *\/$/;"	e	enum:StringDescriptors_t
+SetupHardware	Mind-link.c	/^void SetupHardware(void)$/;"	f	typeref:typename:void
+StringDescriptors_t	Descriptors.h	/^enum StringDescriptors_t {$/;"	g
+TARGET	makefile	/^TARGET       = Mind-link$/;"	m
+USBSerialStream	Mind-link.c	/^static FILE USBSerialStream;$/;"	v	typeref:typename:FILE	file:
+USB_DEVICE_ONLY	Config/LUFAConfig.h	/^	#define USB_DEVICE_ONLY$/;"	d
+USB_Descriptor_Configuration_t	Descriptors.h	/^} USB_Descriptor_Configuration_t;$/;"	t	typeref:struct:__anond58df16d0108
+USE_FLASH_DESCRIPTORS	Config/LUFAConfig.h	/^	#define USE_FLASH_DESCRIPTORS$/;"	d
+USE_STATIC_OPTIONS	Config/LUFAConfig.h	/^	#define USE_STATIC_OPTIONS /;"	d
+VirtualSerial_CDC_Interface	Mind-link.c	/^USB_ClassInfo_CDC_Device_t VirtualSerial_CDC_Interface =$/;"	v	typeref:typename:USB_ClassInfo_CDC_Device_t
+_DESCRIPTORS_H_	Descriptors.h	/^#define _DESCRIPTORS_H_$/;"	d
+_LUFA_CONFIG_H_	Config/LUFAConfig.h	/^#define _LUFA_CONFIG_H_$/;"	d
+_VIRTUALSERIAL_H_	Mind-link.h	/^#define _VIRTUALSERIAL_H_$/;"	d
+__anond58df16d0108	Descriptors.h	/^{$/;"	s
+all	makefile	/^all:$/;"	t
+clockStatus	Mind-link.c	/^bool clockStatus = false;$/;"	v	typeref:typename:bool
+cmdBuffer	Mind-link.c	/^char cmdBuffer[CMD_LEN];$/;"	v	typeref:typename:char[]
+currentPos	Mind-link.c	/^uint16_t currentPos = 0;$/;"	v	typeref:typename:uint16_t
+cycles	Mind-link.c	/^uint32_t cycles = 0;$/;"	v	typeref:typename:uint32_t
+cycles_max	Mind-link.c	/^uint32_t cycles_max = 500;$/;"	v	typeref:typename:uint32_t
+main	Mind-link.c	/^int main(void)$/;"	f	typeref:typename:int
+printBuffer	Mind-link.c	/^char printBuffer[50] = {'0'};$/;"	v	typeref:typename:char[50]
+resetStatus	Mind-link.c	/^bool resetStatus = false;$/;"	v	typeref:typename:bool
