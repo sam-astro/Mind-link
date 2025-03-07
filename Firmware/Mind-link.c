@@ -44,6 +44,7 @@
 
 char cmdBuffer[CMD_LEN];
 char printBuffer[50] = {'0'};
+char* ReportString = "00000000000000000000000000000000\n\0";
 
 /** LUFA CDC Class driver interface configuration and state information. This structure is
  *  passed to all CDC Class driver functions, so that multiple instances of the same class
@@ -83,6 +84,8 @@ static FILE USBSerialStream;
 uint32_t cycles = 0;
 uint32_t cycles_max = 500;
 
+bool printOther = false;
+
 /** Main program entry point. This routine contains the overall program flow, including initial
  *  setup of all components and the main program loop.
  */
@@ -111,12 +114,13 @@ int main(void)
 
         if(cmdBuffer[0] != '\n') // If first char is not newline, it contains command
         {
-			if(strcmp(cmdBuffer, "cyclemax") == 0){
+			if(strcmp(cmdBuffer, "cyclemax\n") == 0){
 				cycles_max += 50;
 				if(cycles_max > 2000)
 	  				cycles_max = 0;
-				sprintf(printBuffer, "cyclemax is: %lu\n", cycles_max);
-				fputs(printBuffer, &USBSerialStream);
+				printOther = true;
+				sprintf(ReportString, "cyclemax is: %lu\n", cycles_max);
+				//fputs(printBuffer, &USBSerialStream);
 			}
         }
 
@@ -162,39 +166,43 @@ void SetupHardware(void)
 }
 
 uint16_t currentPos = 0;
-char* ReportString = "00000000000000000000000000000000\n\0";
 bool clockStatus = false;
 bool resetStatus = false;
 
 /** Checks for changes in the position of the board joystick, sending strings to the host upon each change. */
 void HandleMuxAndIO(void)
 {
-	if(currentPos >= 32){
-		resetStatus = true;
-		PORTB |= (1<<RST_COUNTER_PIN);
-		currentPos = 0;
-	}
-	if(resetStatus){
-		PORTB &= ~(1<<RST_COUNTER_PIN);
-		resetStatus = false;
-	}
-
-	// Get value of input pin
-	if (PINB & (1<<INPUT_PIN))
-		ReportString[currentPos] = '1';
-	else
-		ReportString[currentPos] = '0';
-
-	// Toggle clock pin
-	if(clockStatus)
-		PORTD |= (1<<CLK_PIN);
-	else
-		PORTD &= ~(1<<CLK_PIN);
-
-	currentPos++;
-
-	if(currentPos == 32){
+	if(printOther){
 		fputs(ReportString, &USBSerialStream);
+	}
+	else{
+		if(currentPos >= 32){
+			resetStatus = true;
+			PORTB |= (1<<RST_COUNTER_PIN);
+			currentPos = 0;
+		}
+		if(resetStatus){
+			PORTB &= ~(1<<RST_COUNTER_PIN);
+			resetStatus = false;
+		}
+
+		// Get value of input pin
+		if (PINB & (1<<INPUT_PIN))
+			ReportString[currentPos] = '1';
+		else
+			ReportString[currentPos] = '0';
+
+		// Toggle clock pin
+		if(clockStatus)
+			PORTD |= (1<<CLK_PIN);
+		else
+			PORTD &= ~(1<<CLK_PIN);
+
+		currentPos++;
+
+		if(currentPos == 32){
+			fputs(ReportString, &USBSerialStream);
+		}
 	}
 }
 
