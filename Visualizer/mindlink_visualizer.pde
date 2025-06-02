@@ -7,7 +7,7 @@ int[] values = new int[32]; // Array to store values for all 32 circles
 boolean serialConnected = false;
 
 void setup() {
-  size(720, 480);
+  size(1300, 1300);
   noStroke();
 
   initSerial();
@@ -19,7 +19,7 @@ void setup() {
 }
 
 void initSerial() {
-  String portName = "COM15"; // Update with your port
+  String portName = "/dev/ttyACM0"; // Update with your port
   do {
     try {
       myPort = new Serial(this, portName, 9600);
@@ -39,13 +39,39 @@ void draw() {
   background(0);
 
   // Draw grid of circles
-  int cols = 8;
-  int rows = 4;
+  int cols =6;
+  int rows = 6;
   float circleSize = width/(cols*2);
+  
+  strokeWeight(5);
+  noFill();
+  stroke(150);
+  circle(width/2, height/2, width-5);
+  //noStroke();
+  
+  for (int i = 0; i < 4; i++) {
+    int col = (i+1) % cols;
+    int row = i / rows;
+    float x = map(col, 0, cols-1, circleSize, width-circleSize);
+    float y = map(row, 0, rows-1, circleSize, height-circleSize);
 
-  for (int i = 0; i < values.length; i++) {
-    int col = i % cols;
-    int row = i / cols;
+    fill(values[i]);
+    ellipse(x, y, circleSize, circleSize);
+  }
+
+  for (int i = 4; i < values.length-4; i++) {
+    int col = (i+2) % cols;
+    int row = (i+2) / cols;
+    float x = map(col, 0, cols-1, circleSize, width-circleSize);
+    float y = map(row, 0, rows-1, circleSize, height-circleSize);
+
+    fill(values[i]);
+    ellipse(x, y, circleSize, circleSize);
+  }
+  
+  for (int i =values.length-4; i < values.length; i++) {
+    int col = (i+3) % cols;
+    int row = (i+2) / cols;
     float x = map(col, 0, cols-1, circleSize, width-circleSize);
     float y = map(row, 0, rows-1, circleSize, height-circleSize);
 
