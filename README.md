@@ -1,4 +1,4 @@
-# Mind-link
+# Mind-link 🧠
 
 ### Compilation and Uploading Steps:
 
